@@ -375,34 +375,39 @@ button { font-family: inherit; }
 
 .autoRowWrap {
   width: 100%;
-  background: transparent;
-  cursor: pointer;
-  border: 0;
-  box-shadow: none;
+  overflow: hidden; /* IMPORTANT */
 }
 
 .autoRow {
+  width: 100%;
+  overflow: hidden;
+}
+
+.autoTrack {
   display: flex;
-  align-items: center;
   gap: 28px;
-  padding: 12px 0;
-  overflow-x: hidden;
-  scrollbar-width: none;
+  width: max-content;
+  animation: autoScroll 25s linear infinite;
 }
 
-.autoRow::-webkit-scrollbar { 
-  display: none; 
+/* Different speed for second row */
+.skillsRows .autoRowWrap:nth-child(2) .autoTrack {
+  animation-duration: reverse(25s);
 }
 
-.autoEdge {
-  flex: 0 0 18px;
+@keyframes autoScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .autoItem {
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
-  user-select: none;
 }
 
 .autoIcon {
@@ -411,8 +416,6 @@ button { font-family: inherit; }
   display: grid;
   place-items: center;
   border-radius: 999px;
-  background: transparent;
-  border: 0;
   transition: transform 0.2s;
 }
 
@@ -425,6 +428,7 @@ button { font-family: inherit; }
   height: 62px;
   display: block;
 }
+
 
 
 /* -------------------------

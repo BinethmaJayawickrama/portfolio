@@ -49,8 +49,8 @@ export default function Skills() {
   return (
     <Section id="skills" eyebrow="Skills" centerHeader>
       <div className="skillsRows">
-        <AutoScrollRow items={row1} speed={60} ariaLabel="Frontend Skills" />
-        <AutoScrollRow items={row2} speed={70} ariaLabel="Backend Skills" />
+        <AutoScrollRow items={row1} speed={50} ariaLabel="Frontend Skills" />
+        <AutoScrollRow items={row2} speed={50} ariaLabel="Backend Skills" />
       </div>
     </Section>
   );
