@@ -10,17 +10,28 @@ export default function ProjectCard({ project, onOpen }) {
 
       <div className="chipRow">
         {project.tags.map((t) => (
-          <span className="chip" key={t}>{t}</span>
+          <span className="chip" key={t}>
+            {t}
+          </span>
         ))}
       </div>
 
       <div className="cardActions">
-        <button className="btn" onClick={() => onOpen(project)}>Details</button>
+        <button
+          className="btn"
+          type="button"
+          onClick={() => onOpen(project)}
+          aria-label={`Open details for ${project.title}`}
+        >
+          Details
+        </button>
+
         {project.live ? (
           <a className="btn btnGhost" href={project.live} target="_blank" rel="noreferrer">
             Live
           </a>
         ) : null}
+
         {project.code ? (
           <a className="btn btnGhost" href={project.code} target="_blank" rel="noreferrer">
             Code
