@@ -6,8 +6,8 @@ export default function Footer() {
   // ✅ Update these
   const name = "Binethma Jayawickrama";
   const email = "binethmad@gmail.com";
-  const githubUrl = "https://github.com/yourusername";
-  const linkedinUrl = "https://linkedin.com/in/yourusername";
+  const githubUrl = "https://github.com/BinethmaJayawickrama";
+  const linkedinUrl = "https://www.linkedin.com/in/binethma";
 
   const links = [
     { label: "About", href: "#about" },
