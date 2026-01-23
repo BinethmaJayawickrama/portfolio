@@ -63,8 +63,16 @@ html {
 body {
   margin: 0;
   font-family: var(--font);
-  background: radial-gradient(900px 500px at 20% -10%, rgba(20, 20, 60, 0.35), transparent 70%),
-    radial-gradient(900px 500px at 90% 0%, rgba(20, 20, 40, 0.35), transparent 75%),
+  background: radial-gradient(
+      900px 500px at 20% -10%,
+      rgba(20, 20, 60, 0.35),
+      transparent 70%
+    ),
+    radial-gradient(
+      900px 500px at 90% 0%,
+      rgba(20, 20, 40, 0.35),
+      transparent 75%
+    ),
     var(--bg);
   color: var(--text);
   line-height: 1.55;
@@ -142,12 +150,20 @@ button {
   right: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
-  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.72), rgba(20, 20, 20, 0.28));
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0.72),
+    rgba(20, 20, 20, 0.28)
+  );
   border-bottom: 1px solid var(--border);
 }
 
 :root[data-theme="light"] .navWrap {
-  background: linear-gradient(to bottom, rgba(240, 240, 240, 0.85), rgba(240, 240, 240, 0.5));
+  background: linear-gradient(
+    to bottom,
+    rgba(240, 240, 240, 0.85),
+    rgba(240, 240, 240, 0.5)
+  );
 }
 
 .nav {
@@ -214,7 +230,11 @@ button {
 }
 
 .navLink.isActive {
-  background: linear-gradient(135deg, rgba(20, 20, 60, 0.35), rgba(20, 20, 60, 0.15));
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 60, 0.35),
+    rgba(20, 20, 60, 0.15)
+  );
   color: var(--text);
   border: 1px solid var(--border);
 }
@@ -248,7 +268,11 @@ button {
 }
 
 .btnPrimary {
-  background: linear-gradient(135deg, rgba(20, 20, 60, 0.85), rgba(20, 20, 60, 0.55));
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 60, 0.85),
+    rgba(20, 20, 60, 0.55)
+  );
   border-color: rgba(220, 220, 220, 0.22);
 }
 
@@ -420,7 +444,6 @@ button {
 
 /* -------------------------
    Projects (Advanced)
-   (use with Projects.jsx that renders .projectsWrap & .projectFeatured)
 -------------------------- */
 .projectsWrap {
   display: grid;
@@ -430,7 +453,11 @@ button {
 
 .projectFeatured {
   border: 1px solid var(--border);
-  background: linear-gradient(135deg, rgba(20, 20, 60, 0.10), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 60, 0.1),
+    rgba(255, 255, 255, 0.02)
+  );
   border-radius: calc(var(--radius) + 6px);
   padding: 18px;
   box-shadow: var(--shadow);
@@ -467,7 +494,8 @@ button {
 }
 
 .projectCard {
-  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+  transition: transform 0.18s ease, background 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .projectCard:hover {
@@ -502,7 +530,7 @@ button {
 }
 
 /* -------------------------
-   Contact 
+   Contact
 -------------------------- */
 .contactLayout {
   display: grid;
@@ -514,11 +542,6 @@ button {
   width: auto;
   justify-content: center;
   margin: 0 auto;
-
-}
-
-.contactHeader {
-  /* padding: 8px 0 0; */
 }
 
 .contactTitle {
@@ -535,7 +558,7 @@ button {
 
 /* big card like screenshot */
 .contactCard {
-  border: 100px solid var(--border);
+  border: 1px solid var(--border);
   background: linear-gradient(180deg, var(--surface), rgba(255, 255, 255, 0.02));
   border-radius: calc(var(--radius) + 10px);
   padding: 22px;
@@ -606,7 +629,11 @@ button {
   gap: 10px;
   padding: 14px 18px;
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255, 120, 80, 0.95), rgba(255, 120, 80, 0.75));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 120, 80, 0.95),
+    rgba(255, 120, 80, 0.75)
+  );
   color: #fff;
   text-decoration: none;
   font-weight: 650;
@@ -632,7 +659,6 @@ button {
     padding: 18px;
   }
 }
-
 
 /* -------------------------
    Modal
@@ -671,86 +697,34 @@ button {
   margin-top: 14px;
 }
 
-.modalGrid>.card:last-child {
+.modalGrid > .card:last-child {
   grid-column: 1 / -1;
 }
 
 /* -------------------------
-   Footer (Proper)
+   Footer (SIMPLE — wanted)
+   Uses: <footer class="simpleFooter"><div class="simpleFooterBox">...</div>
 -------------------------- */
-.footer {
+.simpleFooter {
+  margin-top: 64px;
+  padding: 26px 0 34px;
   border-top: 1px solid var(--border);
-  padding: 22px 0;
-  background: rgba(255, 255, 255, 0.02);
 }
 
-.footerInner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
+.simpleFooterBox {
+  width: 100%;
+  text-align: center;
+  padding: 22px 18px;
 
-.footerLeft {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.footerBrand {
-  font-weight: 750;
-  letter-spacing: -0.01em;
-  color: var(--text);
-}
-
-.footerDot {
-  color: var(--muted);
-}
-
-.footerCopy {
-  color: var(--muted);
-}
-
-.footerRight {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.footerIcon {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
+  background: linear-gradient(180deg, var(--surface), rgba(255, 255, 255, 0.02));
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text);
-  text-decoration: none;
-  transition: transform 0.18s ease, background 0.18s ease;
-}
+  border-radius: 40px;
 
-.footerIcon:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.08);
-}
+  color: var(--muted);
+  font-size: 1.05rem;
 
-.footerIcon svg {
-  width: 18px;
-  height: 18px;
-}
-
-/* Mobile */
-@media (max-width: 940px) {
-  .footerInner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footerRight {
-    margin-top: 8px;
-  }
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
 }
 
 /* -------------------------
@@ -781,8 +755,6 @@ button {
 
 /* -------------------------
    Skills Auto-Scroll Rows (FIXED)
-   - requires AutoScrollRow.jsx to render duplicated items (items + items)
-   - infinite loop with no blank space uses translateX(-50%)
 -------------------------- */
 .skillsRows {
   display: grid;
@@ -808,17 +780,10 @@ button {
   will-change: transform;
 }
 
-/* Second row: different speed + reverse direction */
-.skillsRows .autoRowWrap:nth-child(2) .autoTrack {
-  animation-duration: reverse(25s);
-
-}
-
 @keyframes autoScroll {
   from {
     transform: translateX(0);
   }
-
   to {
     transform: translateX(-50%);
   }
@@ -936,316 +901,5 @@ button {
 @media (max-width: 940px) {
   .aboutHeroCenter {
     padding: 64px 0 52px;
-  }
-}
-
-/* -------------------------
-   Contact (Centered Header + Single Card)
--------------------------- */
-.contactCenterWrap {
-  display: grid;
-  place-items: center;
-  margin-top: 14px;
-}
-
-.contactCard {
-  width: min(1120px, 100%);
-  border-radius: calc(var(--radius) + 10px);
-  padding: 24px;
-}
-
-.contactInfo {
-  display: grid;
-  gap: 14px;
-}
-
-.contactRow {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.contactLabel {
-  font-weight: 750;
-  color: var(--text);
-}
-
-.contactValue {
-  color: var(--muted);
-}
-
-.contactLink {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-/* socials row */
-.contactSocials {
-  display: flex;
-  gap: 14px;
-  margin-top: 18px;
-  margin-bottom: 18px;
-  justify-content: flex-start;
-}
-
-.contactSocialBtn {
-  width: 56px;
-  height: 56px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--text);
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.18s ease, background 0.18s ease;
-}
-
-.contactSocialBtn:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.contactSocialBtn svg {
-  width: 22px;
-  height: 22px;
-}
-
-/* download button */
-.contactDownloadBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 20px;
-  border-radius: 999px;
-  background: linear-gradient(135deg,
-      rgba(255, 120, 80, 0.95),
-      rgba(255, 120, 80, 0.75));
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  width: fit-content;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
-  transition: transform 0.18s ease, filter 0.18s ease;
-}
-
-.contactDownloadBtn:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.02);
-}
-
-.contactDownloadBtn svg {
-  width: 18px;
-  height: 18px;
-}
-
-/* Mobile */
-@media (max-width: 940px) {
-  .contactCard {
-    padding: 18px;
-  }
-}
-
-/* =========================
-   ADVANCED FOOTER
-   Put this at the very bottom
-========================= */
-.advFooter {
-  margin-top: 64px;
-  position: relative;
-  border-top: 1px solid var(--border);
-  background:
-    radial-gradient(1000px 400px at 20% 0%, rgba(20, 20, 60, 0.35), transparent 75%),
-    radial-gradient(1000px 400px at 80% 10%, rgba(20, 20, 40, 0.28), transparent 70%),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-  backdrop-filter: blur(2px);
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.advFooterInner {
-  padding: 44px 0 36px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 32px;
-}
-
-.advFooterBrand {
-  flex: 1.2;
-  min-width: 260px;
-}
-
-.advFooterLogoRow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.advFooterLogoDot {
-  width: 12px;
-  height: 12px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--c-navy), var(--c-accent));
-  box-shadow: 0 10px 25px rgba(20, 20, 60, 0.35);
-}
-
-.advFooterName {
-  font-weight: 850;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  font-size: 1.05rem;
-}
-
-.advFooterTagline {
-  margin: 10px 0 0;
-  color: var(--muted);
-  max-width: 52ch;
-  line-height: 1.6;
-}
-
-.advFooterSocial {
-  margin-top: 16px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.advFooterIcon {
-  width: 48px;
-  height: 48px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--border);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-  color: var(--text);
-  text-decoration: none;
-  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-}
-
-.advFooterIcon:hover {
-  transform: translateY(-3px) scale(1.05);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
-  box-shadow: 0 8px 24px rgba(20, 20, 60, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-.advFooterIcon svg {
-  width: 18px;
-  height: 18px;
-}
-
-.advFooterEmailBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
-  border-radius: 999px;
-  border: 1px solid rgba(220, 220, 220, 0.25);
-  background: linear-gradient(135deg, rgba(20, 20, 60, 0.5), rgba(20, 20, 60, 0.3));
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 750;
-  font-size: 0.95rem;
-  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-}
-
-.advFooterEmailBtn:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(135deg, rgba(20, 20, 80, 0.65), rgba(20, 20, 60, 0.45));
-  box-shadow: 0 8px 28px rgba(20, 20, 60, 0.4);
-}
-
-.advFooterCols {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  min-width: 320px;
-}
-
-.advFooterCol {
-  border: 1px solid var(--border);
-  border-radius: calc(var(--radius) + 6px);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-  padding: 20px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.advFooterCol:hover {
-  transform: translateY(-2px);
-  border-color: rgba(220, 220, 220, 0.3);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.advFooterHeading {
-  margin: 0 0 10px;
-  font-weight: 850;
-  color: var(--text);
-  letter-spacing: -0.01em;
-}
-
-.advFooterList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 8px;
-}
-
-.advFooterLink {
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.15s ease, transform 0.15s ease;
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.advFooterLink:hover {
-  color: var(--text);
-  transform: translateX(2px);
-}
-
-.advFooterMuted {
-  color: var(--muted);
-}
-
-.advFooterBottom {
-  border-top: 1px solid var(--border);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-  backdrop-filter: blur(4px);
-}
-
-.advFooterBottomInner {
-  padding: 14px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.advFooterBottomText {
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.advFooterBottomRight {
-  opacity: 0.9;
-}
-
-/* Mobile */
-@media (max-width: 940px) {
-  .advFooterInner {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .advFooterCols {
-    grid-template-columns: 1fr;
-    min-width: auto;
   }
 }
